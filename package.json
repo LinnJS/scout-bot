@@ -1,0 +1,16 @@
+{
+  "name": "scoutBot",
+  "version": "1.0.0",
+  "description": "Web scraping tool to gather data from websites",
+  "main": "server.js",
+  "author": "Justin Linn",
+  "license": "MIT",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "express": "^4.15.4",
+    "handlebars": "^4.0.10",
+    "nodemon": "^1.11.0",
+    "path": "^0.12.7",
+    "request": "^2.81.0"
+  }
+}
