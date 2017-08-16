@@ -7,29 +7,28 @@ const fs = require('fs')
 const app = express()
 const port = 3000
 
-// ei 1
-// let url = "https://google.com"
-// request(url, function(err, res, body){
-//   if (err) {
-//     console.log(err)
-//   } else {
-//     console.log(body)
-//   }
+
+// let destination = fs.createWriteStream('./downloads/google2.html')
+// let url = 'https://google.com'
+// request(url)
+// .pipe(destination)
+// .on('finish', function(){
+//   console.log('done')
+// })
+// .on('err', function(err){
+//   console.log(err)
 // })
 
-//ei 2
-let destination = fs.createWriteStream('./downloads/google2.html')
-let url = 'https://google.com'
-request(url)
-.pipe(destination)
-.on('finish', function(){
-  console.log('done')
-})
-.on('err', function(err){
-  console.log(err)
-})
+//ei 3
 
+let url = 'http://archive.thedali.org/mwebcgi/mweb.exe?request=record;id=169;type=101'
 
+request(url, function(err, res, body){
+  let $ = cheerio.load(body)
+  let details = $('.details dl')
+  let detailsText = details.text()
+  console.log(detailsText)
+})
 
 app.listen(port)
 console.log(`server is listening on port ${port}`)
