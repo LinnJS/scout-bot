@@ -32,7 +32,7 @@ request(url, function(err, res, body) {
   let obj = {}
   details.children().each((i, node) => {
     ;`$(dt) space $(dd)`
-    if (node.name === 'dt') {
+    if (node.name === 'dd') {
       value = $(node).text()
     } else {
       key = $(node).text()
