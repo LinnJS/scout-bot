@@ -22,11 +22,25 @@ const port = 3000
 //ei 3
 
 let url = 'http://archive.thedali.org/mwebcgi/mweb.exe?request=record;id=169;type=101'
+let destination = fs.createWriteStream('./downloads/dali.txt')
+
 
 request(url, function(err, res, body){
   let $ = cheerio.load(body)
   let details = $('.details dl')
   let detailsText = details.text()
+  details.children().each((i, node) => {
+    console.log(node.name, $(node).text())
+  })
+// details.children().for
+
+  // .pipe(destination)
+  // .on('finish', function(){
+  //   console.log('done')
+  // })
+  // .on('err', function(err){
+  //   console.log(err)
+  // })
   console.log(detailsText)
 })
 
