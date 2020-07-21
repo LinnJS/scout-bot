@@ -1,5 +1,5 @@
 {
-  "name": "scoutBot",
+  "name": "scout-bot",
   "version": "1.0.0",
   "description": "Web scraping tool to gather data from websites",
   "main": "server.js",
